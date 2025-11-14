@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-frontend/client.js
+frontend/src/client.js
 
 # Editor directories and files
 .vscode/*
