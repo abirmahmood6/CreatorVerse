@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import supabase from "../client.js";
-import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
 import NoCreators from "../components/NoCreator.jsx";
 import LoadingUI from "../components/LoadingUI.jsx"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ViewCreator = () => {
   const [creator, setCreator] = useState(null);
@@ -67,6 +67,7 @@ const ViewCreator = () => {
               <p className=""> {creator.description} </p>
             </div>
             <a
+            type="url"
               href={creator.url}
               target="_blank"
               rel="noopener noreferrer" //stops the new tab from messing with this page

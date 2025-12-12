@@ -7,7 +7,7 @@ const CreatorCard = ({creator}) => {
       <h3 className="font-bold font-mono bg-slate-700 text-white p-2"> {creator.name} </h3>
       <img src={creator.imageURL} alt={creator.name} className="w-40 h-40 object-cover rounded-xl py-2 mx-auto"/>
       <p> 
-      {creator.description.length > 15 ? 
+      {creator.description.length > 15 ?
       (creator.description.slice(0,15) + "...") //slice and shows only first 15 characters of description
       : (creator.description)} 
       </p>

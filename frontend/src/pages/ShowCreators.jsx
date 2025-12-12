@@ -1,9 +1,9 @@
 import supabase from "../client.js";
-import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar.jsx";
 import CreatorCard from "../components/CreatorCard.jsx";
 import NoCreator from "../components/NoCreator.jsx";
 import LoadingUI from "../components/LoadingUI.jsx";
+import { useState, useEffect } from "react";
 
 /*
 - TO-DO:
@@ -44,7 +44,7 @@ const ShowCreators = () => {
     <div className="min-h-screen">
       <Navbar />
       {fetchError && (<p>{fetchError}</p>)}
-      {isLoading ? (<LoadingUI/>) : creators ? // is it loading? then show loadingUI. If not, check if creators exist, if yes then show creators info. If creators do not exist, display "No Creator"
+      {isLoading ? (<LoadingUI/>) : creators.length > 0 ? // is it loading? then show loadingUI. If not, check if creators exist, if yes then show creators info. If creators do not exist, display "No Creator"
         (<div className="creators flex justify-center"> {/* centers the grid items*/}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {creators.map(creator => (
