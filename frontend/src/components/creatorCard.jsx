@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import {InfoIcon} from "lucide-react"
+import {InfoIcon, PenIcon} from "lucide-react"
 
 const CreatorCard = ({creator}) => {
   return (
@@ -11,7 +11,10 @@ const CreatorCard = ({creator}) => {
       (creator.description.slice(0,15) + "...") //slice and shows only first 15 characters of description
       : (creator.description)} 
       </p>
-      <Link to={`/view/${creator.id}`} className="flex justify-center"> <InfoIcon/> </Link>
+      <div className="flex justify-center gap-2"> 
+      <Link to={`/view/${creator.id}`}> <InfoIcon/> </Link>
+      <Link to={`/edit/${creator.id}`}> <PenIcon/> </Link>
+      </div>
       
     </div>
   )

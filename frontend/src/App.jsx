@@ -1,6 +1,6 @@
 import './App.css'
 import AddCreator from './pages/addCreator'
-import EditCreator from './pages/editCreator'
+import EditCreator from './pages/EditCreator'
 import ShowCreators from './pages/showCreators'
 import ViewCreator from './pages/viewCreator'
 import {Route,Routes} from "react-router"

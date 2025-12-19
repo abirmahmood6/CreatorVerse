@@ -6,10 +6,13 @@ import LoadingUI from "../components/LoadingUI.jsx";
 import { useState, useEffect } from "react";
 
 /*
-- TO-DO:
-- complete viewing a Single Content Creator
+- TO-DO/fixes:
+- add edit/delete creator
 - Use .env to protect sensitive info like supabase API key 
 - complete LL !
+- when add/edit a creator, shud be appended to the top
+- add goood beahivour when clicking error img/youtube url
+- 
 */
 
 const ShowCreators = () => {
