@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 - complete LL !
 - when add/edit a creator, shud be appended to the top
 - add goood beahivour when clicking error img/youtube url
-- 
+- in social linsk, ask for insta, youtube, twitter etc handle but require only one
 */
 
 const ShowCreators = () => {
