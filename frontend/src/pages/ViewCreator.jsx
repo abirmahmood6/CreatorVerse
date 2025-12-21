@@ -3,7 +3,7 @@ import NoCreators from "../components/NoCreator.jsx";
 import LoadingUI from "../components/LoadingUI.jsx"
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, LinkIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ViewCreator = () => {
@@ -31,7 +31,6 @@ const ViewCreator = () => {
         .select()
         .eq("id", id) //find the row where id column equals the id from the URL.
         .single() // one row only, not an array
-
       if (error) {
         console.log("Error fetching Creator with id: ", error)
         setLoading(false)
@@ -47,35 +46,44 @@ const ViewCreator = () => {
   // !! Whats a dependency? Anything inside useEffect that comes from outside the effect must go in the dependency array.
 
   return (
-    <div className="min-h-screen bg-slate-100 p-8">
-      <div className={`container mx-auto max-w-2xl p-8 ${bg} rounded-xl`}>
-        <Link to={"/"} className="flex justify-self-start btn btn-ghost"> <ArrowLeft /> Back </Link>
+    <div className="min-h-screen p-8">
+      <div className={`container mx-auto max-w-xl p-8 ${bg} rounded-xl`}>
+        <Link to={"/"} className="btn btn-ghost text-primary"> <ArrowLeft /> Back </Link>
 
         {/* for creator: as we assign NULL to creator, in first iteration the value is null which will not be displayed. so we first check if creator exist and then display data */}
         {isLoading ? (<LoadingUI />) : creator ? // is it loading? then show loadingUI. If not, check if creator exist, if yes then show creator info. If creator do not exist, display "No Creator"
-          (<div className="card flex flex-col items-center py-4">
-            <h1 className="bg-slate-700 text-white mb-4 p-2 font-mono rounded-xl w-full">
+          (<div className="card flex flex-col items-center py-4 ">
+            <h1 className="bg-slate-700 text-white mb-4 p-2 text-center font-mono rounded-xl w-full">
               {creator.name}
             </h1>
             <img
               src={creator.imageURL}
               alt={creator.name}
-              className="object-cover w-80 h-80 mb-4 p-1  bg-slate-100 rounded-xl"
+              className="object-cover w-80 h-80 mb-4 p-1 rounded-xl"
             />
             <div className="bg-slate-100 border rounded-xl p-2 mb-4 max-h-24 overflow-y-auto">
-              <h2 className="font-mono font-bold"> Description </h2>
-              <p className=""> {creator.description} </p>
+              <h2 className="font-mono font-bold text-center text-primary"> Description </h2>
+              <p className="text-slate-500"> {creator.description} </p>
             </div>
             <a
-            type="url"
+              type="url"
               href={creator.url}
               target="_blank"
               rel="noopener noreferrer" //stops the new tab from messing with this page
-              className="text-primary flex mt-8 p-4 bg-violet-300 font-mono font-bold rounded-xl hover:bg-violet-400">
-              Visit Creator
+              className="inline-flex text-primary mt-8 gap-2 font-mono tracking-tighter rounded-xl underline underline-offset-4 mb-4">
+              <LinkIcon /> Visit Creator
             </a>
+            <footer className="mt-auto text-sm font-mono text-slate-500 ">
+              Created On {" "}{new Date(creator.created_at).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+              })}
+            </footer>
+
           </div>)
           : (<NoCreators />)} {/* if no creators exists in DB, display "No Creator" */}
+
       </div>
     </div>
   )

@@ -4,10 +4,6 @@ import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 
-// to-do for this page:
-// add {loading}, add {rateLimiting}, for the save btn, if loading show "saving...""
-// more compelling UI maybe
-
 const AddCreator = () => {
   const [isLoading, setLoading] = useState(false);
   const [name, setName] = useState("");
@@ -40,12 +36,12 @@ const AddCreator = () => {
   }
 
   return (
-    <div className="p-8 flex flex-col items-center"> {/* Outer-most wrapper centers whole page*/}
-      <div className="max-w-2xl p-4">
+    <div className="min-h-screen flex flex-col items-center p-8"> {/* Outer-most wrapper centers whole page*/}
+      <div className="max-w-xl p-4 w-full bg-slate-50 rounded-xl">
         <Link to="/" className="btn btn-ghost"> <ArrowLeft /> Back </Link>
-        <h1 className="font-mono mx-auto w-fit p-2 mb-4 rounded-xl tracking-wide text-xl">Add a creator</h1>
+        <h1 className="font-mono mx-auto w-fit p-2 mb-4 rounded-xl tracking-wide text-xl">Add Creator</h1>
         {/* structure and repeat */}
-        <form onSubmit={handleAddCreator} className="border-2 border-sky-500 p-4 rounded-xl">
+        <form onSubmit={handleAddCreator} className="border-2 border-slate-500 p-4 rounded-xl">
           <div className="form-control mb-4 flex justify-between ">
             <label className="label mr-2">
               <span className="label-text font-mono font-bold ">Name:</span>
@@ -53,7 +49,7 @@ const AddCreator = () => {
             <input
               type="text"
               value={name}
-              placeholder="Enter Name:"
+              placeholder="Creator name (e.g., Marques Brownlee)"
               className="border border-slate-300 mb-4 p-2"
               onChange={(e) => setName(e.target.value)}
             />
@@ -65,7 +61,7 @@ const AddCreator = () => {
             <input
               type="text"
               value={imageURL}
-              placeholder="Enter Image URL:"
+              placeholder="Image URL (e.g., https://example.com/creator.jpg)"
               className="border border-slate-300 mb-4 p-2"
               onChange={(e) => setImageURL(e.target.value)}
             />
@@ -77,7 +73,7 @@ const AddCreator = () => {
             <input
               type="text"
               value={url}
-              placeholder="https://youtube.com/@channelname"
+              placeholder="Channel or profile link (e.g., https://youtube.com/@mkbhd)"
               className="border border-slate-300 mb-4 p-2"
               onChange={(e) => setURL(e.target.value)}
             />
@@ -88,12 +84,12 @@ const AddCreator = () => {
             </label>
             <textarea
               value={description}
-              placeholder="Description here"
+              placeholder="Brief description of the creator and their content..."
               className="textarea border border-slate-300 p-2"
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-          <button type="submit" className="bg-slate-400 px-4 py-2 mt-2 w-full font-mono font-bold mx-auto hover:bg-slate-500 rounded-xl"> Save </button>
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 mt-2 w-full font-mono font-bold mx-auto hover:bg-blue-700 rounded-xl"> Save </button>
         </form>
       </div>
     </div>
@@ -101,3 +97,8 @@ const AddCreator = () => {
 };
 
 export default AddCreator;
+
+
+
+
+

@@ -7,12 +7,17 @@ import { useState, useEffect } from "react";
 
 /*
 - TO-DO/fixes:
+- creator added last/updated last will be added to topleft
 - add edit/delete creator
 - Use .env to protect sensitive info like supabase API key 
 - complete LL !
 - when add/edit a creator, shud be appended to the top
 - add goood beahivour when clicking error img/youtube url
 - in social linsk, ask for insta, youtube, twitter etc handle but require only one
+
+in ADD creator:
+// fix up the UI and submit prework!
+// add {loading}, add {rateLimiting}, for the save btn, if loading show "saving...""
 */
 
 const ShowCreators = () => {
@@ -26,7 +31,7 @@ const ShowCreators = () => {
       const { data, error } = await supabase
         .from("creators")
         .select()
-
+        .order("created_at", {ascending:false}) //orders the creators by timeCreated table and ascendsFalse means NEWEST->OLDEST order.
       if (error) {
         console.log("Unable to fetch from supabase: ", error)
         setFetchError("Unable to fetch data from supabase")
@@ -47,15 +52,15 @@ const ShowCreators = () => {
     <div className="min-h-screen">
       <Navbar />
       {fetchError && (<p>{fetchError}</p>)}
-      {isLoading ? (<LoadingUI/>) : creators.length > 0 ? // is it loading? then show loadingUI. If not, check if creators exist, if yes then show creators info. If creators do not exist, display "No Creator"
+      {isLoading ? (<LoadingUI />) : creators.length > 0 ? // is it loading? then show loadingUI. If not, check if creators exist, if yes then show creators info. If creators do not exist, display "No Creator"
         (<div className="creators flex justify-center"> {/* centers the grid items*/}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {creators.map(creator => (
-                <CreatorCard key={creator.id} creator={creator} />
-              ))
-              }
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {creators.map(creator => (
+              <CreatorCard key={creator.id} creator={creator} />
+            ))
+            }
           </div>
+        </div>
         ) : (<NoCreator />)
       }
     </div>
