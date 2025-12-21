@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 
 const ViewCreator = () => {
   const [creator, setCreator] = useState(null);
-  const [isLoading, setLoading] = useState(false)
+  const [isLoading, setLoading] = useState(false);
   const [bg, setBg] = useState([]);
   const { id } = useParams();
-  const bgColors = [
+  const bgColors = [ //random background colors
     "bg-red-200",
     "bg-blue-200",
     "bg-green-200",

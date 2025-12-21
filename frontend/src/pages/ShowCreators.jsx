@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.jsx";
 import CreatorCard from "../components/CreatorCard.jsx";
 import NoCreator from "../components/NoCreator.jsx";
 import LoadingUI from "../components/LoadingUI.jsx";
+import Footer from "../components/Footer.jsx"
 import { useState, useEffect } from "react";
 
 /*
@@ -63,6 +64,7 @@ const ShowCreators = () => {
         </div>
         ) : (<NoCreator />)
       }
+      <Footer/>
     </div>
   )
 }

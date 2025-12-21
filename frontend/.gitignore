@@ -24,3 +24,5 @@ frontend/src/client.js
 *.njsproj
 *.sln
 *.sw?
+
+.env
