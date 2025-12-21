@@ -37,14 +37,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+[![Creatorverse Walkthrough](assets/thumbnail.png)](https://www.loom.com/share/12c53f11c1624af3a5d3fce185c4048e) 
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 GIF tool here
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF/Walkthrough created with **[Loom](https://www.loom.com/)**
+
 
 ## Notes
 
