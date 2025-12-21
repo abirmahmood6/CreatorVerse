@@ -1,16 +1,16 @@
-# WEB103 Prework - *👉🏿 CreatorVerse *
+# WEB103 Prework - * CreatorVerse *
 
-Submitted by: **👉🏿 Abir Mahmood **
+Submitted by: ** Abir Mahmood **
 
-About this web app: **👉🏿 Built a full-stack web app that lets users manage and explore their favorite content creators. Implemented CRUD operations to create, view, edit, and delete creators, each with a name, URL, description, and optional image. Used Supabase for backend database management, React Router for dynamic navigation, and asynchronous API calls with Axios/fetch. Enhanced UX with responsive design and optional card-style layouts **
+About this web app: **👉 Built a full-stack web app that lets users manage and explore their favorite content creators. Implemented CRUD operations to create, view, edit, and delete creators, each with a name, URL, description, and optional image. Used Supabase for backend database management, React Router for dynamic navigation, and asynchronous API calls with Axios/fetch. Enhanced UX with responsive design and optional card-style layouts **
 
-Time spent: **👉🏿 15–20  ** hours
+Time spent: ** 15–20  ** hours
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-<!-- 👉🏿👉🏿👉🏿 Make sure to check off completed functionality below -->
+<!-- Completed functionality is indicated in the checklist below -->
 - [x] **A logical component structure in React is used to create the frontend of the app**
 - [x] **At least five content creators are displayed on the homepage of the app**
 - [x] **Each content creator item includes their name, a link to their channel/page, and a short description of their content**
@@ -37,7 +37,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-[![Creatorverse Walkthrough](assets/thumbnail.png)](https://www.loom.com/share/12c53f11c1624af3a5d3fce185c4048e) 
+[![Creatorverse Walkthrough](frontend/src/assets/thumbnail.png)](https://www.loom.com/share/12c53f11c1624af3a5d3fce185c4048e)
 
 GIF/Walkthrough created with **[Loom](https://www.loom.com/)**
 
@@ -54,7 +54,7 @@ User Feedback: Integrated React Hot Toast to show real-time success and error me
 
 ## License
 
-Copyright [👉🏿 2025] [👉🏿 Abir Mahmood]
+Copyright [2025] [Abir Mahmood]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
